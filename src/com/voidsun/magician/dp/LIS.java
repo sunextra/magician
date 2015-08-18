@@ -32,8 +32,6 @@ public class LIS {
     public static void main(String[] args) {
         lis();
 
-
-
         List<Integer> ends = null;
         int maxLength = 0;
         for(int i=0; i<nn.length; i++){
