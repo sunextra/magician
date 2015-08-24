@@ -1,8 +1,6 @@
 package com.voidsun.magician.dp;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @Description
@@ -11,50 +9,81 @@ import java.util.Map;
  * @Email voidsun@126.com
  */
 public class MaxLength {
-    Map<Integer, List<E>> fromEdgeMap;
-    Map<Integer, List<E>> toEdgeMap;
+    static Map<String, List<E>> fromEdgeMap = new HashMap<>();
+    static Map<String, List<E>> toEdgeMap = new HashMap<>();
 
-    Map<Integer, Integer> toMaxLength;
+    Map<String, Integer> toMaxLength = new HashMap<>();
 
-    void max(int V, int length){
+    void max(String V, int length, Integer preLength){
+        if(preLength == null){
+            preLength = 0;
+        }
         if(toMaxLength.get(V) == null) {
             toMaxLength.put(V, 0);
         }
-        if(length > toMaxLength.get(V)){
-            toMaxLength.put(V, length);
-        }
-    }
-    void add(int V, int length){
-        if(toMaxLength.get(V) == null) {
-            toMaxLength.put(V, 0);
-        }
-        if(length > toMaxLength.get(V)){
-            toMaxLength.put(V, toMaxLength.get(V) + length);
+        if(length + preLength > toMaxLength.get(V)){
+            toMaxLength.put(V, length + preLength);
         }
     }
 
-    void maxLength(int start, int end){
-        max(start, 0);
+    void maxLength(String start, String end){
+        max(start, 0, 0);
         LinkedList<E> toList = new LinkedList<>();
         toList.addAll(fromEdgeMap.get(start));
         while(!toList.isEmpty()){
-            E next = toList.pop();
-            int from = next.from;
-            int to = next.to;
-            if(to != end){
-                toList.addAll(fromEdgeMap.get(to));
+            E next = toList.pollFirst();
+            String to = next.to;
+            if(!to.equals(end)){
+                if(fromEdgeMap.get(to) != null){
+                    toList.addAll(fromEdgeMap.get(to));
+                }
             }
             for(E fromE : toEdgeMap.get(to)){
-                max(to, fromE.length);
+                max(to, fromE.length, toMaxLength.get(fromE.from));
             }
-            add(to, toMaxLength.get(from));
         }
+    }
+
+    public static void main(String[] args) {
+        new E("0", "1", 5);
+        new E("0", "2", 5);
+        new E("1", "3", 2);
+        new E("1", "4", 4);
+        new E("2", "5", 1);
+        new E("3", "6", 2);
+        new E("4", "7", 8);
+        new E("5", "7", 3);
+        new E("5", "8", 16);
+        new E("7", "9", 4);
+        new E("8", "9", 1);
+        MaxLength maxLength = new MaxLength();
+        maxLength.maxLength("0", "9");
+        System.out.println(maxLength.toMaxLength.get("9"));
     }
 
 
 }
 class E{
-    int from;
-    int to;
+    String from;
+    String to;
     int length;
+
+    E(String from, String to, int length){
+        this.from = from;
+        this.to = to;
+        this.length = length;
+        List<E> fromSet = MaxLength.fromEdgeMap.get(from);
+        if(fromSet == null){
+            fromSet = new ArrayList<>();
+            MaxLength.fromEdgeMap.put(from, fromSet);
+        }
+        fromSet.add(this);
+
+        List<E> toSet = MaxLength.toEdgeMap.get(to);
+        if(toSet == null){
+            toSet = new ArrayList<>();
+            MaxLength.toEdgeMap.put(to, toSet);
+        }
+        toSet.add(this);
+    }
 }
