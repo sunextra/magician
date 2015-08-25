@@ -12,3 +12,5 @@
     Rotate Image : [https://leetcode.com/problems/rotate-image/]
     Ugly Number : [https://leetcode.com/problems/ugly-number/]
     Ugly Number II : [https://leetcode.com/problems/ugly-number-ii/]
+    Repeated DNA Sequences : [https://leetcode.com/problems/repeated-dna-sequences/]
+    Largest Rectangle in Histogram : [https://leetcode.com/problems/largest-rectangle-in-histogram/]
