@@ -8,8 +8,4 @@ package com.voidsun.magician.std;
  */
 public class Std {
 
-    public static int max(int a, int b){
-        return a > b ? a : b;
-    }
-
 }

@@ -20,26 +20,34 @@ package com.voidsun.magician.leetcode;
 public class LargestRectangleInHistogram {
 
     public int largestRectangleArea(int[] height) {
+        int[] areas = new int[height.length + 1];
         int max = 0;
         int current = 0;
         while(current < height.length){
             int count = 1;
             int index = current;
             while(--index > 0 && height[index] >= height[current]){
+                if(height[index] == height[current]) {
+                    areas[index] = 1;
+                }
                 count++;
             }
             index = current;
             while(++index < height.length && height[index] >= height[current]){
+                if(height[index] == height[current]) {
+                    areas[index] = 1;
+                }
                 count++;
             }
             int area = count * height[current];
             max = max > area ? max : area;
-            current++;
+            while(areas[++current] != 0);
         }
         return max;
     }
 
     public static void main(String[] args) {
         System.out.print(new LargestRectangleInHistogram().largestRectangleArea(new int[]{2,1,5,6,2,3}));
+        System.out.print(new LargestRectangleInHistogram().largestRectangleArea(new int[]{2,2}));
     }
 }

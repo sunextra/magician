@@ -14,3 +14,5 @@
     Ugly Number II : [https://leetcode.com/problems/ugly-number-ii/]
     Repeated DNA Sequences : [https://leetcode.com/problems/repeated-dna-sequences/]
     Largest Rectangle in Histogram : [https://leetcode.com/problems/largest-rectangle-in-histogram/]
+    MaximalSquare : [https://leetcode.com/problems/maximal-square/]
+    MaximalRectangle : [https://leetcode.com/problems/maximal-rectangle/]

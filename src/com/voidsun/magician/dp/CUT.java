@@ -1,7 +1,5 @@
 package com.voidsun.magician.dp;
 
-import static com.voidsun.magician.std.Std.max;
-
 /**
  * 钢材切割问题
  * 切割价值
@@ -32,7 +30,7 @@ public class CUT {
     void cut(int n, int[] dp){
         for(int s = 1; s <= n; s++){
             for(int i = 0; i <= 4 && i <= s; i++){
-                dp[s] = max(dp[s], value[i] + dp[s-i] - cost);
+                dp[s] = Math.max(dp[s], value[i] + dp[s-i] - cost);
             }
         }
     }
