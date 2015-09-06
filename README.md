@@ -9,6 +9,10 @@
 *   MaxLength: 无环有向图最长加权路径
 *   LPS: 最长回文子序列
 
+##贪心算法
+---
+*   ActiveSelect: 活动选择问题
+
 ##leetcode
 ---
 *   [Distinct Subsequences] (https://leetcode.com/problems/distinct-subsequences/)
