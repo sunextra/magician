@@ -3,6 +3,8 @@ package com.voidsun.magician.greedy;
 import java.util.LinkedList;
 
 /**
+ * 选出最大的执行时间不重复活动集合
+ *
  * @Description
  * @Author voidsun
  * @Date 2015/9/6

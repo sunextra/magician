@@ -136,7 +136,7 @@ public class MaximalRectangle {
 
     public static void main(String[] args) {
         int rect;
-        /*rect = new MaximalRectangle().maximalRectangle(new char[][]{
+        rect = new MaximalRectangle().maximalRectangle(new char[][]{
                 {'1', '1', '0', '1'},
                 {'1', '1', '0', '1'},
                 {'1', '1', '1', '1'}
@@ -180,7 +180,7 @@ public class MaximalRectangle {
         rect = new MaximalRectangle().maximalRectangle(
                 Std.buildMatrix("1")
         );
-        System.out.println(rect);*/
+        System.out.println(rect);
         rect = new MaximalRectangle().maximalRectangle(
                 Std.buildMatrix("01101",
                                 "11010",
