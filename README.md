@@ -12,6 +12,7 @@
 ##贪心算法
 ---
 *   ActiveSelect: 活动选择问题
+*   IGCP: 区间染色问题
 
 ##leetcode
 ---

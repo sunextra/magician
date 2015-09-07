@@ -1,5 +1,8 @@
 package com.voidsun.magician.std.graph;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * @Description
  * @Author voidsun
@@ -7,9 +10,22 @@ package com.voidsun.magician.std.graph;
  * @Email voidsun@126.com
  */
 public class Node {
-    int id;
+    String id;
+    Set<Node> linkedSet = new HashSet<>();
 
-    public Node(int id) {
+    public Node(String id) {
         this.id = id;
+    }
+
+    Node link(Node node){
+        return link(node, true);
+    }
+
+    Node link(Node node, boolean callback){
+        linkedSet.add(node);
+        if(callback){
+            node.link(this, false);
+        }
+        return this;
     }
 }

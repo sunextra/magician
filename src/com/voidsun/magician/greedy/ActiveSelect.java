@@ -1,6 +1,7 @@
 package com.voidsun.magician.greedy;
 
 import java.util.LinkedList;
+import static com.voidsun.magician.greedy.Active.active;
 
 /**
  * 选出最大的执行时间不重复活动集合
@@ -11,10 +12,6 @@ import java.util.LinkedList;
  * @Email voidsun@126.com
  */
 public class ActiveSelect {
-
-    static Active active(int start, int end){
-        return new Active(start, end);
-    }
 
     void select(Active[] sortedActives, int deadline){
         LinkedList<Active> selectedList = new LinkedList<>();
@@ -37,18 +34,5 @@ public class ActiveSelect {
                 active(6, 10), active(5, 9), active(5, 7), active(3, 9), active(3, 5),
                 active(2, 14), active(1, 4), active(0, 6)};
         new ActiveSelect().select(sortedActives, 17);
-    }
-}
-//select last start
-class Active{
-    int start, end;
-    public Active(int start, int end){
-        this.start = start;
-        this.end = end;
-    }
-
-    @Override
-    public String toString() {
-        return "<"+start+"-"+end+">";
     }
 }

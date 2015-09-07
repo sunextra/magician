@@ -12,21 +12,24 @@ import java.util.Set;
  * @Email voidsun@126.com
  */
 public class Graph {
-    Map<Integer, Node> nodeMap = new HashMap<>();
+    Map<String, Node> nodeMap = new HashMap<>();
     Set<Edge> edgeSet = new HashSet<>();
 
-    Node addNode(int id){
+    public Node addNode(String id){
         Node node = new Node(id);
         nodeMap.put(id, node);
         return node;
     }
 
-    Edge addEdge(int from, int to){
+    public Edge addEdge(String from, String to){
         Node fromNode = nodeMap.get(from);
         if(fromNode == null)fromNode = addNode(from);
         Node toNode = nodeMap.get(to);
         if(toNode == null)toNode = addNode(to);
         Edge edge = new Edge(fromNode, toNode);
+        edgeSet.add(edge);
+        fromNode.link(toNode);
+        toNode.link(fromNode);
         return edge;
     }
 }
