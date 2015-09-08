@@ -15,6 +15,9 @@
 *   ActiveSelect: 活动选择问题
 *   IGCP: 区间染色问题
 
+##算法导论高级数据结构部分实现
+*   FibonacciHeap: 斐波那契堆
+
 ##leetcode
 ---
 *   [Distinct Subsequences] (https://leetcode.com/problems/distinct-subsequences/)
