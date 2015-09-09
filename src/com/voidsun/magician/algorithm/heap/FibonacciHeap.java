@@ -103,27 +103,25 @@ public class FibonacciHeap<T extends Comparable> extends MergeableHeap<T> {
     T extractMin() {
         if(min == null)return null;
         Node extractMin = min;
-        Node current = min;
-        do{
-            min.parent = null;
-            current = current.next;
-        }while(current != min);
-        Node minNext = min.next;
-        Node minPrev = min.prev;
         if(min.child != null){
+            Node minPrev = min.prev;
             Node child = min.child;
             Node childPrev = min.child.prev;
-            minNext.next = childPrev;
-            childPrev.prev = minNext;
-            minPrev.prev = child;
-            child.next = minPrev;
+            minPrev.next = child;
+            child.prev = minPrev;
+            min.prev = childPrev;
+            childPrev.next = min;
+            do {
+                child.parent = null;
+                child = child.next;
+            } while (child != min.child);
         }
-        minNext.prev = min.prev;
-        minPrev.next = min.next;
         if(min == min.next){
             this.min = null;
         }else{
             this.min = min.next;
+            extractMin.prev.next = extractMin.next;
+            extractMin.next.prev = extractMin.prev;
             consolidate();
         }
         this.size--;
@@ -146,9 +144,13 @@ public class FibonacciHeap<T extends Comparable> extends MergeableHeap<T> {
                     Node temp = _this;
                     _this = that;
                     that = temp;
+                }else{
+                    if(that == min){
+                        min = _this;
+                    }
                 }
                 heapLink(_this, that);
-                tempArray[current.degree] = null;
+                tempArray[_this.degree-1] = null;
                 current = _this;
             }
             tempArray[current.degree] = current;
