@@ -17,6 +17,7 @@
 
 ##算法导论高级数据结构部分实现
 *   FibonacciHeap: 斐波那契堆
+*   DisjointSet: 不相交集合
 
 ##leetcode
 ---
