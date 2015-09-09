@@ -30,3 +30,4 @@
 *   [MaximalRectangle] (https://leetcode.com/problems/maximal-rectangle/)
 *   [Interleaving String] (https://leetcode.com/problems/interleaving-string/)
 *   [Two Sum] (https://leetcode.com/problems/two-sum/)
+*   [Count Primes] (https://leetcode.com/problems/count-primes/)
