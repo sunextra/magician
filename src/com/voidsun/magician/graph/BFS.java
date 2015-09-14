@@ -18,15 +18,13 @@ public class BFS {
         }
         while(workList.peekFirst() != null){
             ListGraph.Vertex v = workList.pop();
-            v.visit();
             System.out.print("visit " + v.get() + " link:");
             for(Object obj : v.getLinks()){
                 ListGraph.Vertex nextV = graph.get(obj);
-                if(!nextV.isVisit()){
+                if(!nextV.visit()){
                     workList.add(nextV);
                     System.out.print("[" + nextV.get() + "] ");
                 }
-                nextV.visit();
             }
             System.out.println();
         }

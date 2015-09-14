@@ -54,12 +54,12 @@ public class ListGraph<T> {
             return vertex;
         }
 
-        public boolean isVisit() {
-            return visit;
-        }
-
-        public void visit() {
-            this.visit = true;
+        public boolean visit() {
+            if(!visit){
+                this.visit = true;
+                return false;
+            }
+            return true;
         }
     }
 
