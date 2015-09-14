@@ -23,6 +23,8 @@
 ##图算法
 ---
 *   ListGraph: 邻接链表表示法
+*   Transpose: 转置图
+*   BFS: 广度优先搜索
 
 ##leetcode
 ---
@@ -37,3 +39,6 @@
 *   [Interleaving String] (https://leetcode.com/problems/interleaving-string/)
 *   [Two Sum] (https://leetcode.com/problems/two-sum/)
 *   [Count Primes] (https://leetcode.com/problems/count-primes/)
+
+##并发练习
+---

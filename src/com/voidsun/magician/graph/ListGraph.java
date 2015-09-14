@@ -20,6 +20,21 @@ public class ListGraph<T> {
     Vertex<T> tail;
     Map<T, Vertex<T>> indexOnVertex = new HashMap<>();
 
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        Vertex<T> vertex = head;
+        while(vertex != null){
+            builder.append(vertex.vertex).append(vertex.links).append("\n");
+            vertex = vertex.next;
+        }
+        return builder.toString();
+    }
+
+    public Vertex<T> getHead(){
+        return head;
+    }
+
     class Vertex<T>{
         public Vertex(T t){
             this.vertex = t;
@@ -27,6 +42,25 @@ public class ListGraph<T> {
         T vertex;
         Vertex<T> next;
         LinkedList<T> links = new LinkedList<>();
+        boolean visit = false;
+        public LinkedList<T>
+        getLinks(){
+            return links;
+        }
+        public Vertex<T> next(){
+            return next;
+        }
+        public T get(){
+            return vertex;
+        }
+
+        public boolean isVisit() {
+            return visit;
+        }
+
+        public void visit() {
+            this.visit = true;
+        }
     }
 
     public ListGraph(T... ts){
@@ -56,8 +90,15 @@ public class ListGraph<T> {
             v1 = add(t1);
         }
         for(T link : links){
+            if(indexOnVertex.get(link) == null){
+                add(link);
+            }
             v1.links.add(link);
         }
+    }
+
+    public Vertex<T> get(T t){
+        return indexOnVertex.get(t);
     }
 
     public void dulLink(T t1, T t2){
