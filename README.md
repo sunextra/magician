@@ -25,6 +25,7 @@
 *   ListGraph: 邻接链表表示法
 *   Transpose: 转置图
 *   BFS: 广度优先搜索
+*   DFS: 深度优先搜索
 
 ##leetcode
 ---
@@ -42,3 +43,4 @@
 
 ##并发练习
 ---
+*   NoVisibility: 并发可见性
