@@ -3,6 +3,11 @@
 ##java基础
 *   反序列化破坏单例模式
 
+##Netty in Action
+---
+####chapter1:
+*   echo server/client
+
 ##动态规划
 ---
 *   CUT: 分隔钢筋
@@ -42,6 +47,7 @@
 *   [Interleaving String] (https://leetcode.com/problems/interleaving-string/)
 *   [Two Sum] (https://leetcode.com/problems/two-sum/)
 *   [Count Primes] (https://leetcode.com/problems/count-primes/)
+*   [Single Number] (https://leetcode.com/problems/single-number/)
 
 ##并发练习
 ---
