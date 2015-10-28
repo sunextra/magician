@@ -49,6 +49,7 @@
 *   [Count Primes] (https://leetcode.com/problems/count-primes/)
 *   [Single Number] (https://leetcode.com/problems/single-number/)
 *   [Number of Islands] (https://leetcode.com/problems/number-of-islands/)
+*   [Submission Details] (https://leetcode.com/problems/rotate-list/)
 
 ##并发练习
 ---
