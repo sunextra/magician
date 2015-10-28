@@ -48,6 +48,7 @@
 *   [Two Sum] (https://leetcode.com/problems/two-sum/)
 *   [Count Primes] (https://leetcode.com/problems/count-primes/)
 *   [Single Number] (https://leetcode.com/problems/single-number/)
+*   [Number of Islands] (https://leetcode.com/problems/number-of-islands/)
 
 ##并发练习
 ---
