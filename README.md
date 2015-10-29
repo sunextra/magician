@@ -50,6 +50,8 @@
 *   [Single Number] (https://leetcode.com/problems/single-number/)
 *   [Number of Islands] (https://leetcode.com/problems/number-of-islands/)
 *   [Submission Details] (https://leetcode.com/problems/rotate-list/)
+*   [Bitwise AND of Numbers Range] (https://leetcode.com/problems/bitwise-and-of-numbers-range/)
+*   [Binary Tree Zigzag Level Order Traversal] (https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
 
 ##并发练习
 ---
