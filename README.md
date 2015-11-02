@@ -52,6 +52,7 @@
 *   [Submission Details] (https://leetcode.com/problems/rotate-list/)
 *   [Bitwise AND of Numbers Range] (https://leetcode.com/problems/bitwise-and-of-numbers-range/)
 *   [Binary Tree Zigzag Level Order Traversal] (https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
+*   [3Sum] (https://leetcode.com/problems/3sum/)
 
 ##并发练习
 ---
