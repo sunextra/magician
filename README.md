@@ -53,7 +53,7 @@
 *   [Bitwise AND of Numbers Range] (https://leetcode.com/problems/bitwise-and-of-numbers-range/)
 *   [Binary Tree Zigzag Level Order Traversal] (https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/)
 *   [3Sum] (https://leetcode.com/problems/3sum/)
-
+*   [Palindrome Number] (https://leetcode.com/problems/palindrome-number/)
 ##并发练习
 ---
 *   NoVisibility: 并发可见性

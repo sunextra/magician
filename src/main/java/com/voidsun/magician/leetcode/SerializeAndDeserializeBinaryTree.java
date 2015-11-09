@@ -33,23 +33,6 @@ public class SerializeAndDeserializeBinaryTree {
         if(data.isEmpty()) return null;
         String[] strArray = data.split(",");
         TreeNode[] nodeArray = new TreeNode[strArray.length];
-        nodeArray[0] = new TreeNode(Integer.parseInt(strArray[1]));
-        int nextStart = 1;
-        int nextEnd = 2;
-        int pointer = 1;
-        int nextLevel = 2;
-        int nextNull = 0;
-        while(pointer < strArray.length){
-            int nullNode = nextNull;
-            nextNull = 0;
-            for(;pointer < nextEnd && pointer < strArray.length; pointer++){
-                if(strArray[pointer].equals("null")){
-                    nullNode++;
-                    continue;
-                }
-
-            }
-        }
         return nodeArray[0];
     }
 
