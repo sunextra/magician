@@ -15,81 +15,118 @@ package com.voidsun.magician.leetcode;
 public class LRUCache {
     int capacity = 0;
     int size = 0;
-    Node head = null;
-    Node end = null;
+    Node[] hTable = null;
+    int hash = 0;
+    Node head = new Node();
+    Node tail = new Node();
 
     class Node{
-        public int key;
-        public int val;
-        public Node prev;
-        public Node next;
-        public Node(int key, int val){
-            this.key = key;
-            this.val = val;
+        public int k;
+        public int v;
+        public Node(){}
+        public Node(int k, int v){
+            this.k = k;
+            this.v = v;
+        }
+        Node prev = null;
+        Node next = null;
+        Node hPrev = null;
+        Node hNext = null;
+    }
+
+    int hash(int k){
+        return k % hash;
+    }
+
+    void append(Node node){
+        size++;
+        Node prev = tail.prev;
+        tail.prev = node;
+        prev.next = node;
+        node.prev = prev;
+        node.next = tail;
+        hSet(node);
+    }
+
+    void remove(Node findNode){
+        size--;
+        findNode.prev.next = findNode.next;
+        findNode.next.prev = findNode.prev;
+        hRemove(findNode);
+    }
+
+    void hSet(Node node){
+        int hKey = hash(node.k);
+        Node findNode = hTable[hKey];
+        if(findNode == null){
+            hTable[hKey] = node;
+        }else{
+            hTable[hKey] = node;
+            node.hNext = findNode;
+            findNode.hPrev = node;
+        }
+    }
+
+    void hRemove(Node node){
+        if(node.hPrev != null){
+            node.hPrev.hNext = node.hNext;
+            if(node.hNext != null) node.hNext.hPrev = node.hPrev;
+        }else{
+            hTable[hash(node.k)] = node.hNext;
+            if(node.hNext != null){
+                node.hNext.hPrev = null;
+            }
         }
     }
 
     public LRUCache(int capacity) {
         this.capacity = capacity;
-    }
-    Node getNode(int key){
-        Node temp = head;
-        while(temp != null){
-            if(temp.key == key) return temp;
-            temp = temp.next;
+        int i = 16;
+        while(i < capacity){
+            i = i<<1;
         }
-        return temp;
+        hash = i<<1 - 1;
+        hTable = new Node[hash];
+        head.next = tail;
+        tail.prev = head;
     }
+
+    Node getNode(int key){
+        Node node = hTable[hash(key)];
+        while(node != null){
+            if(node.k == key){
+                return node;
+            }
+            node = node.hNext;
+        }
+        return null;
+    }
+
     public int get(int key) {
         Node node = getNode(key);
         if(node != null){
-            return node.val;
+            node.prev.next = node.next;
+            node.next.prev = node.prev;
+            Node prev = tail.prev;
+            prev.next = node;
+            tail.prev = node;
+            node.prev = prev;
+            node.next = tail;
+            return node.v;
         }
         return -1;
     }
 
+
     public void set(int key, int value) {
-        if(head == null) {
-            append(new Node(key, value));
-            return;
+        Node node = new Node(key, value);
+        Node findNode = getNode(key);
+        if(findNode != null){
+            remove(findNode);
         }
-        Node node = getNode(key);
-        if(node != null){
-            remove(node);
-            append(new Node(key, value));
-            return;
-        }
-        append(new Node(key, value));
-        if(capacity < size){
-            remove(head);
-        }
-    }
-
-    void append(Node node){
-        size++;
-        if(end == null){
-            head = node;
-            end = node;
-            return;
-        }
-        end.next = node;
-        node.prev = end;
-        end = node;
-    }
-
-    void remove(Node node){
-        size--;
-        Node prev = node.prev;
-        Node next = node.next;
-        if(prev != null){
-            prev.next = next;
-        }else{
-            head = next;
-        }
-        if(next != null){
-            next.prev = prev;
-        }else{
-            end = prev;
+        append(node);
+        if(size > capacity){
+            remove(head.next);
         }
     }
 }
