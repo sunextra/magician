@@ -56,6 +56,7 @@
 *   [Palindrome Number] (https://leetcode.com/problems/palindrome-number/)
 *   [Excel Sheet Column Number] (https://leetcode.com/problems/excel-sheet-column-number/)
 *   [LRU Cache] (https://leetcode.com/problems/lru-cache/)
+*   [Reverse Integer] (https://leetcode.com/problems/reverse-integer/)
 
 ##并发练习
 ---
