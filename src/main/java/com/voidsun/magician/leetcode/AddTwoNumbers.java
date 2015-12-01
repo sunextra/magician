@@ -23,6 +23,6 @@ public class AddTwoNumbers {
         while(l1.next != null || l2.next != null){
             l1 = l1.next;
         }
-
+        return null;
     }
 }
