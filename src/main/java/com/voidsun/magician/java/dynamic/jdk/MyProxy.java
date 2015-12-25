@@ -43,7 +43,7 @@ public class MyProxy {
         }
         long num = nextUniqueNumber.getAndIncrement();
         String proxyName = proxyPkg + proxyClassNamePrefix + num;
-
+        return null;
     }
 
     public static Object newProxyInstance(ClassLoader loader, Class<?>[] interfaces, InvocationHandler h){
