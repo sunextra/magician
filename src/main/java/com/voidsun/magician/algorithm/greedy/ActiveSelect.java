@@ -1,7 +1,7 @@
-package com.voidsun.magician.greedy;
+package com.voidsun.magician.algorithm.greedy;
 
 import java.util.LinkedList;
-import static com.voidsun.magician.greedy.Active.active;
+import static com.voidsun.magician.algorithm.greedy.Active.active;
 
 /**
  * 选出最大的执行时间不重复活动集合

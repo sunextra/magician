@@ -1,15 +1,12 @@
-# magician
-
 ##java基础
-*   反序列化破坏单例模式
+*   并发基础--Executor
 
 ##Netty in Action
----
-####chapter1:
+####chapter2:
 *   echo server/client
 
-##动态规划
----
+##数据结构与算法
+####动态规划
 *   CUT: 分隔钢筋
 *   LCS: 最长公共子序列
 *   LIS: 最长递增子序列
@@ -17,25 +14,22 @@
 *   LPS: 最长回文子序列
 *   Knapspack: 01背包问题
 
-##贪心算法
----
+####贪心算法
 *   ActiveSelect: 活动选择问题
 *   IGCP: 区间染色问题
 
-##算法导论高级数据结构部分实现
----
-*   FibonacciHeap: 斐波那契堆
-*   DisjointSet: 不相交集合
-
-##图算法
----
+####图算法
 *   ListGraph: 邻接链表表示法
 *   Transpose: 转置图
 *   BFS: 广度优先搜索
 *   DFS: 深度优先搜索
 
+
+####算法导论高级数据结构部分实现
+*   FibonacciHeap: 斐波那契堆
+*   DisjointSet: 不相交集合
+
 ##leetcode
----
 *   [Distinct Subsequences] (https://leetcode.com/problems/distinct-subsequences/)
 *   [Rotate Image] (https://leetcode.com/problems/rotate-image/)
 *   [Ugly Number] (https://leetcode.com/problems/ugly-number/)
@@ -61,3 +55,4 @@
 ##并发练习
 ---
 *   NoVisibility: 并发可见性
+*   ThreePrint1: 三线程顺序打印ABC

@@ -1,8 +1,8 @@
-package com.voidsun.magician.greedy;
+package com.voidsun.magician.algorithm.greedy;
 
 import java.util.LinkedList;
 
-import static com.voidsun.magician.greedy.Active.active;
+import static com.voidsun.magician.algorithm.greedy.Active.active;
 
 /**
  * interval-graph color problem

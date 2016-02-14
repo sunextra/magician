@@ -1,4 +1,4 @@
-package com.voidsun.magician.dp;
+package com.voidsun.magician.algorithm.dp;
 
 /**
  * 钢材切割问题

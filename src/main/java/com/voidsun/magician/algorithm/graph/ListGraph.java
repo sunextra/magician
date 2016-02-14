@@ -1,4 +1,4 @@
-package com.voidsun.magician.graph;
+package com.voidsun.magician.algorithm.graph;
 
 import com.voidsun.magician.std.exception.graph.VertexExsistException;
 

@@ -1,4 +1,4 @@
-package com.voidsun.magician.greedy;
+package com.voidsun.magician.algorithm.greedy;
 
 /**
  * @Description

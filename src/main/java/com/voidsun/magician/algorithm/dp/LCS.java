@@ -1,4 +1,4 @@
-package com.voidsun.magician.dp;
+package com.voidsun.magician.algorithm.dp;
 
 /**
  * 最长公共子序列
