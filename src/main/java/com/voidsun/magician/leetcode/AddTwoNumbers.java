@@ -18,11 +18,35 @@ import com.voidsun.magician.std.leetcode.ListNode;
  */
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        int keeper = 0;
-
-        while(l1.next != null || l2.next != null){
-            l1 = l1.next;
+        int add = 0;
+        ListNode node = new ListNode(0);
+        ListNode result = node;
+        boolean next = false;
+        while(add == 1 || l1 != null || l2 != null){
+            if(next){
+                node.next = new ListNode(0);
+                node = node.next;
+            }
+            int l1num = 0;
+            if(l1 != null){
+                l1num = l1.val;
+                l1 = l1.next;
+            }
+            int l2num = 0;
+            if(l2 != null){
+                l2num = l2.val;
+                l2 = l2.next;
+            }
+            int sum = l1num + l2num + add;
+            if(sum >= 10){
+                sum = sum - 10;
+                add = 1;
+            }else{
+                add = 0;
+            }
+            node.val = sum;
+            next = true;
         }
-        return null;
+        return result;
     }
 }
