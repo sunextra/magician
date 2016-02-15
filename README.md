@@ -51,8 +51,8 @@
 *   [Excel Sheet Column Number] (https://leetcode.com/problems/excel-sheet-column-number/)
 *   [LRU Cache] (https://leetcode.com/problems/lru-cache/)
 *   [Reverse Integer] (https://leetcode.com/problems/reverse-integer/)
+*   [Longest Substring Without Repeating Characters] (https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 
 ##并发练习
----
 *   NoVisibility: 并发可见性
 *   ThreePrint1: 三线程顺序打印ABC
