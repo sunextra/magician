@@ -1,5 +1,5 @@
-##java基础
-*   并发基础--Executor
+##Thinking in Java
+*   chapter21
 
 ##Netty in Action
 ####chapter2:
@@ -13,18 +13,14 @@
 *   MaxLength: 无环有向图最长加权路径
 *   LPS: 最长回文子序列
 *   Knapspack: 01背包问题
-
 ####贪心算法
 *   ActiveSelect: 活动选择问题
 *   IGCP: 区间染色问题
-
 ####图算法
 *   ListGraph: 邻接链表表示法
 *   Transpose: 转置图
 *   BFS: 广度优先搜索
 *   DFS: 深度优先搜索
-
-
 ####算法导论高级数据结构部分实现
 *   FibonacciHeap: 斐波那契堆
 *   DisjointSet: 不相交集合

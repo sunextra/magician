@@ -21,6 +21,7 @@ public class Test3 {
             for(int i = 0; i <= 10; i++){
                 executorService.execute(new Test1(i));
             }
+            executorService.shutdown();
             TimeUnit.SECONDS.sleep(3);
         }
 
