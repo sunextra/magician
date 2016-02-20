@@ -16,14 +16,14 @@ public class ActiveSelect {
     void select(Active[] sortedActives, int deadline){
         LinkedList<Active> selectedList = new LinkedList<>();
         select(selectedList, sortedActives, -1, deadline);
-        selectedList.stream().forEach(a -> System.out.print(a));
+        selectedList.stream().forEach(System.out::print);
     }
 
     void select(LinkedList<Active> selectedList, Active[] sortedActives, int idx, int start){
         while(++idx < sortedActives.length && sortedActives[idx].end >= start);
         if(idx < sortedActives.length) {
             selectedList.add(sortedActives[idx]);
-            if (idx != sortedActives.length) select(selectedList, sortedActives, idx, sortedActives[idx].start);
+            select(selectedList, sortedActives, idx, sortedActives[idx].start);
         }
     }
 

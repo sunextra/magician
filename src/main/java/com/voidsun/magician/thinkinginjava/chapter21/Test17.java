@@ -59,6 +59,7 @@ class MultiCounter implements Runnable{
                 TimeUnit.MILLISECONDS.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
+                break;
             }
         }
         System.out.println(this + " stopped");
